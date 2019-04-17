@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'variables.scss';
+
+html {
+    height: 100%;
+    width: 100%;
+    body {
+        //settando valores default de fonte
+        font-family: $font-default;
+
+        h1          { font-size: 27pt }
+        h2          { font-size: 23pt }
+        h3          { font-size: 19pt }
+        h4          { font-size: 15pt }
+        h5          { font-size: 11pt }
+        h6          { font-size: 07pt }
+        p, span, a  { font-size: 12pt }
+
+        h1, h2, h3, h4, h5, 
+        h6, p, span, ul, li { color: $color-dark }
+
+        a {
+            text-decoration: none;
+            color: $color-primary;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        //classes de títulos e fontes
+        .welcome, .title { color: $color-primary }
+        .page-title      { color: $color-secondary }
+        .page-subtitle   { color: $color-light }
+
+        //alinhamento
+
+        .text-center  { text-align: center }
+        .text-left    { text-align: left }
+        .text-right   { text-align: right }
+        .text-justify { text-align: justify }
+
+        .center { align-items: center }
+        .left   { align-items: left }
+        .right  { align-items: right }
+
+        //divs, cards e containers
+        .row {
+            width: 100%;
+            height: auto;
+            float: left;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .col {
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+            height: auto;
+            padding: 1% 2%;
+            float: left;
+            flex-basis: 0;
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+    }
+}
