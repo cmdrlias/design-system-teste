@@ -1,52 +1,38 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="row">
-  <div class="col">
-    <h1 class="welcome">teste 1</h1>
-    <p class="text-center">teste</p>
-    <p class="text-right">teste</p>
-    <p class="text-left">teste</p>
+<nav>
+  <div class="nav-image left col">
+    <img src="../assets/logo.png" />
   </div>
-  <div class="col">
-    <h1 class="welcome">teste 2</h1>
-    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Vivamus at lectus lectus. Ut nulla arcu, iaculis at facilisis eu, 
-        dignissim vel lectus. Pellentesque accumsan viverra nisi.</p>
+  <div class="user-menu right col">
+    <button type="button" class="btn btn-secondary">Painel</button>
   </div>
-  <div class="col">
-    <h1 class="welcome">teste 3</h1>
-    <ul>
-      <li><a href="">teste 1</a></li>
-      <li><a href="">teste 2</a></li>
-      <li><a href="">teste 3</a></li>
-    </ul>
+</nav>
+<div class="header">
+  <div class="breadcr">
+    <small>inicial | {{title}}</small>
+  </div>
+  <img class="header-img" src="../assets/empresa-bg.jpg" />
+  <div class="row header-title text-center">
+    <div class="col">
+      <h1 class="page-title">{{pageTitle}}</h1>
+      <h4 class="page-subtitle">{{pageSubtitle}}</h4>
+    </div>
   </div>
 </div>
-<div class="row">
-  <div class="col">
-    <h1 class="welcome">teste 4</h1>
-    <p class="text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Vivamus at lectus lectus. Ut nulla arcu, iaculis at facilisis eu, dignissim 
-      vel lectus. Pellentesque accumsan viverra nisi. Sed nisi nibh, consequat at 
-      neque ac, iaculis tincidunt est. Ut laoreet auctor elit, eget tincidunt est 
-      tincidunt sit amet. Morbi ultrices auctor auctor. Cras semper ultricies consequat. 
-      Nam laoreet urna elit, a pellentesque justo fermentum vitae. Praesent pharetra 
-      purus vel diam bibendum dignissim.</p>
-  </div>
-  <div class="col">
-    <h1 class="welcome">teste 3</h1>
-    <ul>
-      <li><a href="">teste 1</a></li>
-      <li><a href="">teste 2</a></li>
-      <li><a href="">teste 3</a></li>
-    </ul>
-  </div>
-  <div class="col">
-    <h1 class="welcome">teste 3</h1>
-    <ul>
-      <li><a href="">teste 1</a></li>
-      <li><a href="">teste 2</a></li>
-      <li><a href="">teste 3</a></li>
-    </ul>
+<div class="container">
+  <div class="content">
+    <router-outlet></router-outlet>
   </div>
 </div>
-<router-outlet></router-outlet>
+<div class="guide-buttons">
+  <a href="" class="btn-tab1">
+    <span>AJUDA</span>
+  </a>
+  <a href="" class="btn-tab2">
+    <span>COMO NAVEGAR</span>
+  </a>
+</div>
+<div class="chatbot-tab">
+  <img src="../assets/icon.png">
+  <span>Dúvidas? Posso ajudar?</span>
+</div>

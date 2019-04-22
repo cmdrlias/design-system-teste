@@ -4,7 +4,8 @@ html {
     height: 100%;
     width: 100%;
     body {
-        //settando valores default de fonte
+        //valores default de fonte
+        color: $color-dark;
         font-family: $font-default;
 
         h1          { font-size: 27pt }
@@ -28,22 +29,63 @@ html {
         }
 
         //classes de títulos e fontes
-        .welcome, .title { color: $color-primary }
+        .welcome         { color: $color-primary }
         .page-title      { color: $color-secondary }
-        .page-subtitle   { color: $color-light }
+        .page-subtitle   { color: $color-secondary-alt; margin-top: -1em }
 
         //alinhamento
-
         .text-center  { text-align: center }
         .text-left    { text-align: left }
         .text-right   { text-align: right }
         .text-justify { text-align: justify }
 
-        .center { align-items: center }
-        .left   { align-items: left }
-        .right  { align-items: right }
+        .center { align-items: center; -webkit-box-pack: center!important; -ms-flex-pack: center!important; justify-content: center!important }
+        .left   { align-items: left; float: left }
+        .right  { align-items: right; float: right }
 
         //divs, cards e containers
+        nav {
+            background-color: $color-light;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            padding: 1.5% 1%;
+            box-shadow: 0 2px 4px 0 $nav-shadow;
+            z-index: 99990;
+        }
+
+        .container {
+            margin-top: 10em;
+            min-width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            position: absolute;
+            left: 0;
+            box-sizing: border-box;
+            background-color: $color-light;
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow:  0 -5px 10px  rgba(0, 0, 0, 0.2);
+        }
+
+        .content {
+            margin: 0 auto;
+            min-width: 1px;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            box-sizing: border-box;
+            display: inline-block;
+            width: 70em;
+            padding: 2em 4em;
+        }
+        
         .row {
             width: 100%;
             height: auto;
@@ -55,6 +97,7 @@ html {
             flex-wrap: wrap;
             margin-right: -15px;
             margin-left: -15px;
+            margin-bottom: 15px;
         }
 
         .col {
@@ -63,15 +106,281 @@ html {
             padding-right: 15px;
             padding-left: 15px;
             height: auto;
-            padding: 1% 2%;
-            float: left;
             flex-basis: 0;
             -webkit-box-flex: 1;
             -ms-flex-positive: 1;
             flex-grow: 1;
             max-width: 100%;
             box-sizing: border-box;
+            margin-left: 1%;
         }
 
+        .product-card {
+            min-height: 21em;
+            max-height: 21em;
+        }
+
+        .card {
+            margin-bottom: 2em;
+            height: auto;
+            box-shadow: $card-shadow;
+            position: relative;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-clip: border-box;
+            border-radius: .25rem;
+            .card-header {
+                background-color: $color-primary;
+                .card-title {
+                    color: $color-light !important;
+                }
+                .card-image {
+                    display: block;
+                    width: 100%;
+                    height: 141px;
+                    border-top-left-radius: calc(.25rem - 1px);
+                    border-top-right-radius: calc(.25rem - 1px);
+                }
+            }
+            .card-body {
+                padding: .5em 1em;
+            }
+
+            .card-footer {
+                padding: 1em;
+            }
+        }
+
+        .header {
+            width: 100%;
+            height: 10em;
+            z-index: -1;
+            .breadcr {
+                position: absolute;
+                top: 6em;
+                left: 2em;
+                small {
+                    color: $color-light;
+                }
+            }
+            .header-img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                max-height: 30em;
+                z-index: -1;
+                vertical-align: middle;
+            }
+            .header-title {
+                margin-top: 10%;
+            }
+        }
+
+        //botões
+        .btn {
+            padding: 2%;
+            width: 8em;
+            height: 3em;
+            color: $color-light;
+            background-color: $color-medium;
+            border: none;
+            transition: all .5s;
+        }
+
+        .btn-primary {
+            background-color: $color-primary;
+        }
+
+        .btn-secondary {
+            color: $color-primary;
+            background-color: $color-secondary;
+            border: 1px solid $color-primary;
+        }
+
+        .btn-secondary:hover {
+            color: $color-light;
+            background-color: $color-primary;
+            border: none;
+        }
+
+        .btn-success {
+            background-color: $color-success;
+        }
+
+        .btn-danger {
+            background-color: $color-danger;
+        }
+
+        .btn-info {
+            background-color: $color-info;
+        }
+
+        .btn-warning {
+            background-color: $color-warning;
+        }
+
+        .btn-primary:hover, 
+        .btn-success:hover, 
+        .btn-danger:hover, 
+        .btn-info:hover, 
+        .btn-warning:hover {
+            opacity: .8;
+        }
+        .guide-buttons {
+            .btn-tab1 {
+                top: 15em;
+                position: fixed;
+                margin: 0;
+                display: block;
+                z-index: 1000;
+                right: 0;
+                padding: .5em;
+                transform-origin: 100% 100%;
+                -webkit-transform-origin: 100% 100%;
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                background-color: $color-primary;
+                span {
+                    color: $color-light;
+                } 
+            }
+            .btn-tab2 {
+                top: 20em;
+                position: fixed;
+                margin: 0;
+                display: block;
+                z-index: 1000;
+                right: 0;
+                padding: .5em;
+                transform-origin: 100% 100%;
+                -webkit-transform-origin: 100% 100%;
+                -webkit-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+                background-color: $color-primary;
+                span {
+                    color: $color-light;
+                } 
+            }
+            .btn-tab1:hover, .btn-tab2:hover {
+                span {
+                    color: $color-dark-blue;
+                }
+            }
+        }
+
+        .chatbot-tab {
+            position: fixed;
+            height: 2em;
+            width: 20em;
+            background-color: #90908f;
+            bottom: 0px;
+            right: 30px;
+            border-radius: 10px 10px 0 0;
+            padding: 10px;
+            white-space: nowrap;
+            z-index: 100;
+            img {
+                width: 30px;
+                float: left;
+            }
+            span {
+                color: $color-light;
+                font-size: 9pt;
+                font-weight: 600;
+                text-transform: uppercase;
+                float: left;
+                display: block;
+                padding-left: 1em;
+                padding-top: .6em;
+                width: 260px;
+            }
+        }
+        //listagem e tabelas
+        ul {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .list {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            padding-left: 0;
+            margin-bottom: 0;
+            .item {
+                position: relative;
+                display: block;
+                padding: .75rem 1.25rem;
+                margin-bottom: -1px;
+                background-color: #fff;
+                border: 1px solid $color-secondary-alt;
+            }
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 1rem;
+            background-color: transparent;
+            color: $color-dark;
+            thead {
+                display: table-header-group;
+                vertical-align: middle;
+                border-color: inherit;
+                th {
+                    color: $color-dark;
+                }
+            }
+            tbody {
+                display: table-row-group;
+                vertical-align: middle;
+                border-color: inherit;
+            }
+            tfoot {
+                display: table-footer-group;
+                vertical-align: middle;
+                border-color: inherit;
+            }
+            tr {
+                display: table-row;
+                vertical-align: inherit;
+                border-color: inherit;
+            }
+            td, th {
+                padding: .75rem;
+                vertical-align: top;
+                border-top: 1px solid #dee2e6;
+            }
+            
+        }
+
+        //outros
+        .user-menu {
+            margin-right: 1%;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+        .product-flag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 63px;
+        }
+        
+        .demo {
+            border: solid .5px $color-medium;
+        }
     }
 }

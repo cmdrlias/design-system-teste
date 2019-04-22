@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'design-system-project';
+  title = 'Benefícios';
+  pageTitle = 'CONHEÇA NOSSOS BENEFÍCIOS!';
+  pageSubtitle = 'Melhore a vida dos seus colaboradores e ofereça-lhes benefícios exclusivos!';
 }
